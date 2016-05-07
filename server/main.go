@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/hkdnet/gsocket/lib"
 	"net"
 	"time"
+
+	"github.com/hkdnet/gsocket/lib"
 )
 
 func main() {
@@ -16,6 +17,7 @@ func main() {
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
+			fmt.Println(err)
 			continue
 		}
 		go handleClient(conn)
